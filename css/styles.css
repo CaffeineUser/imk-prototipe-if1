@@ -1,0 +1,282 @@
+/**
+ * Variables & Base Settings
+ */
+:root {
+    --color-primary: #411CDE;
+    --color-white: #FFFFFF;
+    --color-accent-cyan: #17D7D7;
+    --font-primary: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: #f3f4f6; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/**
+ * Device Containers (390x780)
+ */
+.container-landing,
+.container-login {
+    position: relative;
+    width: 390px;
+    height: 780px;
+    background-color: var(--color-white);
+    box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.12);
+    border-radius: 32px;
+    overflow: hidden; /* Figma Clip Content */
+}
+
+/**
+ * Shared Decorative Blobs
+ */
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* --- Landing Page Blobs --- */
+.blob-top-left {
+    width: 172px;
+    height: 172px;
+    background-color: var(--color-primary);
+    top: -56px;
+    left: -43px;
+}
+
+.blob-middle-left {
+    width: 170px;
+    height: 170px;
+    background-color: var(--color-accent-cyan);
+    top: 61px;
+    left: -74px;
+}
+
+.blob-bottom-left {
+    width: 181px;
+    height: 181px;
+    background-color: var(--color-accent-cyan);
+    bottom: -64px;
+    left: -40px;
+}
+
+.blob-bottom-right-1 {
+    width: 172px;
+    height: 172px;
+    background-color: var(--color-primary);
+    bottom: -43px;
+    right: -49px;
+}
+
+.blob-bottom-right-2 {
+    display: none;
+}
+
+/* --- Log In Page Blobs (Figma Position) --- */
+.blob-top-right-login {
+    width: 187px;
+    height: 185px;
+    background-color: var(--color-accent-cyan);
+    top: -40px;
+    left: -65px; /* Sesuai letak Ellipse 26 di kiri atas frame login */
+}
+
+.blob-bottom-left-login {
+    width: 172px;
+    height: 172px;
+    background-color: var(--color-primary);
+    bottom: -50px;
+    right: -45px; /* Sesuai letak Ellipse 28 di kanan bawah frame login */
+}
+
+/**
+ * Content Layouts
+ */
+.content-wrapper,
+.content-wrapper-login {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 32px;
+}
+
+/* --- Landing Components --- */
+.logo-mascot {
+    width: 124px;
+    height: auto;
+    margin-top: 190px;
+    animation: floatMascot 3s ease-in-out infinite;
+}
+
+@keyframes floatMascot {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+.logo-brand {
+    width: 180px;
+    height: auto;
+    margin-top: 24px;
+}
+
+.btn-start {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    width: 114px;
+    height: 44px;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: var(--font-primary);
+    cursor: pointer;
+    margin-top: 48px;
+    box-shadow: 0px 8px 20px rgba(65, 28, 222, 0.25);
+    transition: all 0.2s ease;
+}
+
+.btn-start:hover {
+    background-color: #3314b3;
+    transform: scale(1.04);
+}
+
+.tagline {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    color: #000000;
+    opacity: 0.8;
+    margin-top: 80px;
+    text-align: center;
+}
+
+/* --- Log In Components --- */
+.brand-section {
+    text-align: center;
+    margin-top: 110px;
+    margin-bottom: 44px;
+}
+
+.login-mascot {
+    width: 110px;
+    height: auto;
+    margin-bottom: 16px;
+}
+
+.login-brand-name {
+    width: 160px;
+    height: auto;
+}
+
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1F2937;
+    text-align: left;
+}
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.forgot-link {
+    font-size: 12px;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.input-field input {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 12px;
+    outline: none;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.input-field input:focus {
+    border-color: var(--color-primary);
+}
+
+.btn-login {
+    width: 100%;
+    height: 48px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 12px;
+    box-shadow: 0px 6px 18px rgba(65, 28, 222, 0.2);
+    transition: background-color 0.2s;
+}
+
+.btn-login:hover {
+    background-color: #3314b3;
+}
+
+.signup-text {
+    font-size: 13px;
+    color: #4B5563;
+    margin-top: auto;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.signup-text a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/**
+ * Responsive Mobile Screen
+ */
+@media (max-width: 480px) {
+    body {
+        background-color: var(--color-white);
+    }
+    .container-landing,
+    .container-login {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0px;
+        box-shadow: none;
+    }
+}

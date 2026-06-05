@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KuliahKu - All Campus Affairs in One Hand</title>
+    <link rel="stylesheet" href="css/tailwind.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- 1. Landing Page Container -->
+    <div class="container-landing">
+        <div class="blob blob-top-left"></div>
+        <div class="blob blob-middle-left"></div>
+        <div class="blob blob-bottom-left"></div>
+        <div class="blob blob-bottom-right-1"></div>
+        <div class="blob blob-bottom-right-2"></div>
+
+        <div class="content-wrapper">
+            <img src="https://www.figma.com/api/mcp/asset/4b17c190-b5c8-4ce9-b16f-08a37325ee68" alt="KuliahKu Mascot" class="logo-mascot">
+            <img src="https://www.figma.com/api/mcp/asset/76d261a1-17bd-4cbc-8b48-e563dddeefcb" alt="Kampusin" class="logo-brand">
+            <p class="tagline">All Campus Affairs in One Hand.</p>
+            <button class="btn-start" onclick="redirectToLogin()">Start</button>
+        </div>
+    </div>
+
+    <!-- 2. Log In Page Container -->
+    <div class="container-login" style="display: none;">
+        <div class="blob blob-top-right-login"></div>
+        <div class="blob blob-bottom-left-login"></div>
+        <div class="blob blob-bottom-right-login"></div>
+
+        <div class="content-wrapper-login">
+            <div class="brand-section">
+                <img src="https://www.figma.com/api/mcp/asset/4b17c190-b5c8-4ce9-b16f-08a37325ee68" alt="Mascot" class="login-mascot">
+                <img src="https://www.figma.com/api/mcp/asset/76d261a1-17bd-4cbc-8b48-e563dddeefcb" alt="Kampusin" class="login-brand-name">
+            </div>
+
+            <form class="login-form" onsubmit="event.preventDefault();">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <div class="input-field">
+                        <input type="text" id="username" placeholder="Enter your Username">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="label-row">
+                        <label for="password">Password</label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="password" placeholder="Enter your Password">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-login">Log In</button>
+            </form>
+
+            <p class="signup-text">Don’t Have An Account? <a href="#">Sign Up Now</a></p>
+        </div>
+    </div>
+
+    <!-- Scripts Configuration -->
+    <script src="js/router.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/landing.js"></script>
+</body>
+</html>
